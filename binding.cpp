@@ -585,7 +585,7 @@ void LevelDB::Init(Handle<Object> target)
     Nan::SetPrototypeMethod(t, "releaseSnapshot", ReleaseSnapshot);
 
     constructor.Reset(t->GetFunction());
-    target->Set(Nan::New("LevelDB").ToLocalChecked(), t->GetFunction());
+    target->Set(Nan::New("Database").ToLocalChecked(), t->GetFunction());
 }
 
 void LevelDBInit(Handle<Object> target)
