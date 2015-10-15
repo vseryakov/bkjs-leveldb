@@ -5,7 +5,6 @@
 
 #include "bkjs.h"
 #include "bklib.h"
-#include "bklog.h"
 
 #include "leveldb/db.h"
 #include "leveldb/cache.h"

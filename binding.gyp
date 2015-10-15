@@ -25,6 +25,7 @@
       ],
       "sources": [
         "binding.cpp",
+        "bklib/bklib.cpp",
         "leveldb/db/builder.cc",
         "leveldb/db/db_impl.cc",
         "leveldb/db/db_iter.cc",
