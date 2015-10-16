@@ -2,8 +2,31 @@
 
 # Usage
 
+```javascript
+  var ldb = require("bkjs-levelb");
+  var db = new ldb.Database("/tmp/test.ldb", { create_if_missing: 1, compression: 1 }, function(err) {
+
+     this.put("key1", "value1");
+     this.put("key2", "value2");
+     this.select("key", "key", { begins_with: 1 }, function(err, rows) {
+       console.log(rows);
+     });
+
+  });
+```
+
 ## Database class
 - `new Database(file, options, callback)` - create new database object
+  - options:
+    - paranoid_checks - 1 for more runtime checks
+    - create_if_missing - 1 to crete new DB
+    - error_if_exists - 1 to only open existing DB
+    - write_buffer_size -
+    - max_open_files - number of file handles
+    - block_size - default is 4096
+    - compression - 1 to use Snappy compression
+    - block_cache - pass LevelDB block cache pointer
+    - filter_policy - bloom filter policy bits per key
 - Properties:
   - open - 1 if the db is open
   - name - the database file name
